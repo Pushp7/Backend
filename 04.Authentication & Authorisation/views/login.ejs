@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900">
+        <h3 class="text-white text-2xl p-5">Log-in your profile</h3>
+
+        <form class="flex flex-col w-96 gap-3 p-5" action="/login" method="post">
+            <input class="bg-zinc-700 text-white px-3 py-2 rounded-md" type="text" name="email" placeholder="email">
+            <input class="bg-zinc-700 text-white px-3 py-2 rounded-md" type="password" name="password" placeholder="password">
+            <input class="bg-blue-500 text-white px-5 py-2 rounded-md" type="submit" value="login">
+            <div class="flex gap-2">
+                <p class="text-white text-sm underline cursor-default">new user?</p>
+                <a href="/" class="text-white text-sm hover:text-zinc-400">signup here</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
