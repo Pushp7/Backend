@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="dark:bg-zinc-900">
+    <main class="min-h-screen">
+        <div class="form w-3/4 m-auto">
+            <form class="px-5 py-5" action="/create" method="post">
+                <input class="dark:bg-zinc-700 dark:text-white block w-full p-2 rounded-md bg-gray-200 outline-blue-500" type="text" placeholder="Subject" name="subject" required>
+                <textarea class="dark:bg-zinc-700 dark:text-white block w-full p-2 resize-none rounded-md bg-gray-200 outline-blue-500 my-2" placeholder="Explain" name="details" required></textarea>
+                <input class="bg-blue-500 hover:bg-blue-600 py-2 px-5 rounded-md text-white cursor-pointer" type="submit" value="Create Issue">
+            </form>
+        </div>
+
+        <div class="mt-10 mx-5 dark:bg-zinc-800 dark:text-white">
+            <h5 class="mb-3 font-bold underline">Public Notes:</h5>
+            <div class="cards flex flex-wrap gap-2">
+                <% if(files.length > 0) {%>
+                    <% files.forEach(function(file){ %>
+                        <div class="card w-72 px-5 bg-gray-200 dark:bg-zinc-700 dark:text-white">
+                            <h2 class="text-xl tracking-tighte"><%= file %></h2>
+                            <div class="flex justify-between items-end">
+                                <a class="text-blue-500 underline" href="./files/<%= file %>">Read more</a>
+                                <a class="text-zinc-500 dark:text-zinc-400 text-sm hover:underline" href="/edit/<%= file %>">Edit filename</a>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <h2>No task yet.</h2>
+                <% } %>   
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

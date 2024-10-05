@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= filename %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="dark:bg-zinc-900">
+    <div class="main min-h-screen w-full">
+        <div class="content mx-3 my-5">
+            <a href="/" class="tracking-tighter text-blue-500 underline">Go back to home</a>
+            <div class="bg-gray-200 dark:bg-gray-800 dark:text-white pl-2">
+                <h1 class="mt-10 text-2xl font-bold"><%= filename %></h1>
+                <p class="mt-2 text-lg"><%= filedata %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
